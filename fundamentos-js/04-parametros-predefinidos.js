@@ -1,4 +1,7 @@
-function calcular_area(base, altura, forma){
+
+// O parâmetro forma fica predefinido com o valor 'R'. Assume esse valor caso não seja passado 
+//Parametros pré definidos devem vir por último na lista de parâmetros. 
+function calcular_area(base, altura, forma='R'){
     switch(forma){
         case 'R': //Retangulo
             return base*altura
