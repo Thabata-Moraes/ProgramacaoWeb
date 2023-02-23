@@ -41,3 +41,37 @@ carro2.ano = 1979
 carro2.cor = 'preto'
 
 console.log({carro1, carro2})
+
+//Problema: juntar dois ou mais vetores em um só
+let frutas =['maça', 'banana','laranja']
+let verduras = ['alface', 'couve', 'rúcula']
+
+//Produzindo um vetor que contém tanto frutas quanto verduras
+//let hortifruti = frutas + verduras  //NÃO é interessante, não funciona como deveria 
+
+//Métodos JS Clássico 
+//let hortifruti = frutas.concat(verduras)
+
+//A partir de 2015 novas formas. Outro método que funciona:
+//Método que funciona 2: usando espalhamento 
+let hortifruti = [...frutas, ...verduras]
+
+console.log({hortifruti})
+
+/*
+    Problema: como declarar uma função capaz de receber 
+    um num arbitrário de argumentos?
+*/
+
+
+//O Espalhamento tb resolve esse tipo de problema 
+//Quando usado em parâmetros de função, passa a ser chamado de PARÊMETRO DE RESTO   
+function soma(...valores){
+    //Dentro da função, o parâmetro de resto se comporta como um vetor
+    let resultado = 0 
+    for(let valor of valores) resultado += valor 
+    return resultado
+}
+
+console.log('Soma 7 números: ', soma(1,2,3,4,5,6,7))
+console.log('Soma 12 números: ', soma(1,2,3,4,5,6,7,8,9,10,11,12))
