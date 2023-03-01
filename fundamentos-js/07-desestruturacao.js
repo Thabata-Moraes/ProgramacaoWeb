@@ -20,7 +20,7 @@ let [, h2, h3] = frutas
 console.log({h2, h3})
 
 //Problema: troca de valores entre variáveis (swap)
-let x=5, y=10;
+let x=5, y=10
 console.log('Antes do swap: ', {x,y});
 //Swap
 // let aux = x
@@ -31,8 +31,8 @@ console.log('Antes do swap: ', {x,y});
 // console.log('Depois do swap: ',{x,y})
 
 // Swap usando desestruturação
-[x,y] = [y,x];
-console.log('Usando desestruturação: ',{x,y});
+[x,y] = [y,x]
+console.log('Usando desestruturação: ',{x,y})
 
 
 //Desestruturação de objetos
