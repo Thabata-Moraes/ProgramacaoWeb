@@ -6,3 +6,4 @@
 //Para retornar a pasta raiz: cd 
 
 
+//Renderiza uma vez só por pág ou por aplicação?
