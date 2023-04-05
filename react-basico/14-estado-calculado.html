@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <div id="root"></div>
+
+  <script type="text/babel">
+    //Versão falha que guarda todas as informações em estado e renderiza atrasado 
+    function Form() {
+        const [peso, setPeso] = React.useState('')
+        const [altura, setAltura] = React.useState('')
+        const [imc, setImc] = React.useState('')
+        const [faixa, setFaixa] = React.useState('')
+
+        function handleChange(e){
+            if(e.target.name === 'peso') setPeso(e.target.value)
+            else setAltura(e.target.value)
+
+            setImc(Number(peso)/Number(altura)**2)
+
+            if(imc < 18.5) setFaixa('Peso baixo')
+            else if(imc<24.5) setFaixa('Peso Normal')
+            else if(imc<30) setFaixa('Sobrepeso')
+            else if(imc<35) setFaixa('Obesidade (Grau I)')
+            else if(imc<40) setFaixa('Obesidade Severa (Grau II)')
+            else setFaixa('Obesidade Mórbida (Grau III)')
+        }
+
+    
+        return (
+            <>
+                <h1>Calculadora de Índice de Massa Corporal (IMC)</h1>
+                <form>
+                    <div>
+                        <label>
+                            <span>Peso</span>  <br />
+                            <input type="number" name='peso' value={peso} onChange={handleChange}/>
+                        </label>
+                    </div> <br />
+
+                    <div>
+                        <label>
+                            <span>Altura</span><br />
+                            <input type="number" name='altura' value={altura} onChange={handleChange}/>
+                        </label>
+                    </div> <br />
+
+                    <div>
+                        IMC: {imc}  
+                    </div>
+                    <div>
+                        Faixa: {faixa}  
+                    </div>
+                </form>
+            </>
+         )
+    }
+
+    const container =
+      <>
+        <Form />
+      </>
+
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+    root.render(container)
+  </script>
+  
+</body>
+</html>

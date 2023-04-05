@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    function Form() {
+
+        const [valor, setValor] = React.useState('')
+        const [cotacao, setCotacao] = React.useState('')
+        const DolarFmt = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'})
+
+        return (
+            <>
+            <h1>Formulário React</h1>
+
+            <form>
+                <div>
+                <label>
+                    <span>Valor em reais</span>  <br />
+                    <input type="number" onChange={e=> setValor(e.target.value)} value={valor}/>
+                </label>
+                </div> <br />
+
+                <div>
+                <label>
+                    <span>Cotação do dólar</span><br />
+                    <input type="number" onChange={e=> setCotacao(e.target.value)} value={cotacao}/>
+                </label>
+                </div> <br />
+
+                <div>
+                  Resultado: {DolarFmt.format(Number(valor)/Number(cotacao))}  
+                </div>
+
+            </form>
+            </>
+         )
+    }
+
+    const container =
+      <>
+        <Form />
+      </>
+
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+    root.render(container)
+  </script>
+  
+</body>
+</html>

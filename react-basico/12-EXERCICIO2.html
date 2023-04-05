@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    function Form() {
+
+        let valor, cotacao, resultado
+
+        const valorRef = React.useRef()
+        const cotacaoRef = React.useRef(Number())
+        const resultadoRef = React.useRef(Number())
+        const DolarFmt = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'})
+
+        function handleChange(event) {
+
+            valor = Number(valorRef.current.value)
+            cotacao = Number(cotacaoRef.current.value)
+            console.log(typeof(cotacao))
+
+            if (cotacao == 0){
+              resultadoRef.current.textContent = "Insira o valor do dólar"
+            } else {
+              resultado = valor / cotacao 
+              resultadoRef.current.textContent = `Valor em dólares: ${DolarFmt.format(resultado)}`
+            }
+            
+           
+        }
+
+        return (
+            <>
+            <h1>Formulário React</h1>
+
+            <form>
+                <div>
+                <label>
+                    <span>Valor em reais</span>  <br />
+                    <input ref={valorRef} type="number" onChange={handleChange}/>
+                </label>
+                </div> <br />
+
+                <div>
+                <label>
+                    <span>Cotação do dólar</span> <br />
+                    <input type="number" ref={cotacaoRef} onChange={handleChange}/>
+                </label>
+                </div> <br />
+
+                <div ref={resultadoRef}></div>
+
+            </form>
+            </>
+         )
+    }
+
+    const container =
+      <>
+        <Form />
+      </>
+
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+    root.render(container)
+  </script>
+  
+</body>
+</html>
