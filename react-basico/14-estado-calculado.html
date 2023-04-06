@@ -19,21 +19,29 @@
     function Form() {
         const [peso, setPeso] = React.useState('')
         const [altura, setAltura] = React.useState('')
-        const [imc, setImc] = React.useState('')
-        const [faixa, setFaixa] = React.useState('')
+        // const [imc, setImc] = React.useState('')
+        // const [faixa, setFaixa] = React.useState('')
+
+        //Estados calculados:
+        let imc = calcImc()
+        let faixa = determinarFaixa()
+
+        function calcImc(){
+          return (Number(peso)/Number(altura)**2)
+        }
+
+        function determinarFaixa(){
+          if(imc < 18.5) return 'Peso baixo'
+            else if(imc<24.5) return 'Peso Normal'
+            else if(imc<30) return 'Sobrepeso'
+            else if(imc<35) return 'Obesidade (Grau I)'
+            else if(imc<40) return 'Obesidade Severa (Grau II)'
+            else return 'Obesidade Mórbida (Grau III)'
+        }
 
         function handleChange(e){
             if(e.target.name === 'peso') setPeso(e.target.value)
             else setAltura(e.target.value)
-
-            setImc(Number(peso)/Number(altura)**2)
-
-            if(imc < 18.5) setFaixa('Peso baixo')
-            else if(imc<24.5) setFaixa('Peso Normal')
-            else if(imc<30) setFaixa('Sobrepeso')
-            else if(imc<35) setFaixa('Obesidade (Grau I)')
-            else if(imc<40) setFaixa('Obesidade Severa (Grau II)')
-            else setFaixa('Obesidade Mórbida (Grau III)')
         }
 
     
