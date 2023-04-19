@@ -1,5 +1,6 @@
 import './App.css'
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import Exercicio01 from './exercicios/01'
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
       </ul>
       <hr/> 
         <Routes>
-          <Route path='01'/>
+          <Route path="01" element={<Exercicio01/>}/>
           <Route path='02'/>
           <Route path='03'/>
           <Route path='04'/>
