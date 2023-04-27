@@ -3,6 +3,24 @@ import VanillaTilt from 'vanilla-tilt'
 
 function Tilt({children}) {
   // 🐨 crie uma ref aqui usando React.useRef()
+  const tiltRef = React.useRef()
+
+  React.useEffect(()=>{
+    // const tiltNode = document.getElementById('tilt')
+    const tiltNode = tiltRef.current
+    VanillaTilt.init(tiltNode, {
+      max: 500,
+      speed: 1000,
+      glare: true,
+      'max-glare': 1.0,
+    })
+
+    // A função retornada por um useEffect() será executada durante a fase "unmount" (decarregamento) da página
+    return () => {
+      alert('Descarregando...')
+      tiltNode.vanillaTilt.destroy()
+    } 
+  },[])
 
   // 🐨 adicione uma função `React.useEffect` aqui e use VanillaTilt para
   // fazer sua div parecer fantástica.
@@ -24,7 +42,7 @@ function Tilt({children}) {
 
   // 🐨 adicione a prop `ref` à div `tilt-root` aqui:
   return (
-    <div className="tilt-root">
+    <div className="tilt-root" ref={tiltRef}>
       <div className="tilt-child">{children}</div>
     </div>
   )
@@ -32,14 +50,17 @@ function Tilt({children}) {
 
 function Exercicio05() {
   return (
-    <>
+    <div className='flex'>
       <Tilt>
         <div className="totally-centered">vanilla-tilt.js</div>
       </Tilt>
       <Tilt>
         <div className="totally-centered">vanilla-tilt.js</div>
       </Tilt>
-    </>
+      
+
+
+    </div>
   )
 }
 

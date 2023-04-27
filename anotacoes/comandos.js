@@ -27,4 +27,11 @@
     
     Estado elevado: deixa no pai os estados para que possa ser compartilhado entre filhos 
     Estado colocado: quando o compartilhamento de um estado não é necessário, dessa forma ele permanece no mesmo component. "Rebaixa".
+
+
+    Três tipos de useEffect:
+    1. Sem vetor de dependência: executado após toda e qualquer atualização
+    2. Com vetor de dependência não vazio: executado após atualizações de variáveis listadas no vetor
+    3. Com vetor de dependência VAZIO: executado apenas na primeira atualização, logo após a fase de mount 
+
 */
