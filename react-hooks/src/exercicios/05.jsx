@@ -9,15 +9,14 @@ function Tilt({children}) {
     // const tiltNode = document.getElementById('tilt')
     const tiltNode = tiltRef.current
     VanillaTilt.init(tiltNode, {
-      max: 500,
-      speed: 1000,
+      max: 5000,
+      speed: 10000,
       glare: true,
       'max-glare': 1.0,
     })
 
     // A função retornada por um useEffect() será executada durante a fase "unmount" (decarregamento) da página
     return () => {
-      alert('Descarregando...')
       tiltNode.vanillaTilt.destroy()
     } 
   },[])
@@ -52,10 +51,292 @@ function Exercicio05() {
   return (
     <div className='flex'>
       <Tilt>
-        <div className="totally-centered">vanilla-tilt.js</div>
+        <div className="totally-centered">🐨</div>
       </Tilt>
       <Tilt>
-        <div className="totally-centered">vanilla-tilt.js</div>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
+      </Tilt>
+      <Tilt>
+        <div className="totally-centered">🐨</div>
       </Tilt>
       
 

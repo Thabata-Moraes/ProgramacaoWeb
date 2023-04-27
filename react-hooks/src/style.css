@@ -3,9 +3,9 @@ Taken from the vanilla-tilt.js demo site:
 https://micku7zu.github.io/vanilla-tilt.js/index.html
 */
 .tilt-root {
-    height: 150px;
+    height: 50px;
     background-color: red;
-    width: 200px;
+    width: 100px;
     background-image: -webkit-linear-gradient(315deg, #ff00ba 0%, #fae713 100%);
     background-image: linear-gradient(135deg, #ff00ba 0%, #fae713 100%);
     transform-style: preserve-3d;
@@ -19,8 +19,8 @@ https://micku7zu.github.io/vanilla-tilt.js/index.html
     top: 50%;
     left: 50%;
     transform: translateZ(30px) translateX(-50%) translateY(-50%);
-    box-shadow: 0 0 50px 0 rgba(51, 51, 51, 0.3);
-    background-color: white;
+    /* box-shadow: 0 0 50px 0 rgba(51, 51, 51, 0.3); */
+    /* background-color: white; */
   }
   .totally-centered {
     width: 100%;
