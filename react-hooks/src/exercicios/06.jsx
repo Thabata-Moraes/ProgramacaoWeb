@@ -8,9 +8,19 @@ import {PokemonForm, fetchPokemon, PokemonInfoFallback, PokemonDataView } from '
 
 function PokemonInfo({pokemonName}) {
   // 🐨 crie o estado para o pokémon (null)
-  const [pokemon, setPokemon] = React.useState(null)
-  const [error, setError] = React.useState(null)
-  const [status, setStatus] = React.useState('idle') //Aguardando informações 
+  // const [pokemon, setPokemon] = React.useState(null)
+  // const [error, setError] = React.useState(null)
+  // const [status, setStatus] = React.useState('idle') //Aguardando informações 
+
+  const [state, setState] = React.useState({
+    pokemon: null,
+    error: null,
+    status:'idle'
+  })
+
+  // Criando constantes somente leitura por meio de desestruturação
+  const {pokemon, error, status} = state 
+
 
 
   // 🐨 crie React.useEffect de modo a ser chamado sempre que pokemonName mudar.
@@ -22,8 +32,10 @@ function PokemonInfo({pokemonName}) {
 
   // 🐨 antes de chamar `fetchPokemon`, limpe o estado atual do pokemon
   // ajustando-o para null.
-  setPokemon(null)
-  setError(null)
+  // setPokemon(null)
+  // setError(null)
+
+  setState({pokemon: null, error: null, status: 'pending'})
 
   // (Isso é para habilitar o estado de carregamento ao alternar entre diferentes
   // pokémon.)
@@ -31,22 +43,24 @@ function PokemonInfo({pokemonName}) {
   //   fetchPokemon('Pikachu').then(
   //     pokemonData => {/* atualize todos os estados aqui */},
   //   )
-  setStatus('pending') // Requisição realizada, aguardando desfecho. 
+  // setStatus('pending') // Requisição realizada, aguardando desfecho. 
   fetchPokemon(pokemonName).then( // Requisição deu certo 
     pokemonData => {
-      setPokemon(pokemonData)
-      setStatus('resolved') // Promessa cumprida
+      // setPokemon(pokemonData)
+      // setStatus('resolved') // Promessa cumprida
+      setState({...state, pokemon: pokemonData, status: 'resolved'})
     } 
   )
   .catch( // Requisição deu errado 
     error => {
-      setError(error)
-      setStatus('rejected') // Promessa frustada
+      // setError(error)
+      // setStatus('rejected') // Promessa frustada
+      setState({...state, status: 'rejected', error})
     }  
   )  
 },[pokemonName])
 
-React.useEffect(()=> {console.log(status)},[status])
+React.useEffect(()=> {console.log(state)},)
 
 // 🐨 return the following things based on the `pokemon` state and `pokemonName` prop:
 // 🐨 retorne o seguinte baseado nos estados `pokemon` e `pokemonName`:
