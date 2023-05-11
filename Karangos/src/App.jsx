@@ -6,8 +6,9 @@ import TopBar from './components/ui/TopBar'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import theme from './utils/theme'
 import {ThemeProvider} from '@mui/material/styles';
-import { Box } from '@mui/material';
+import { Box, CssBaseline } from '@mui/material';
 import FooterBar from './components/ui/FooterBar';
+import Homepage from './pages/Homepage';
 
 function App() {
 
@@ -15,12 +16,20 @@ function App() {
     <>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
+          <CssBaseline/>
           <Box sx={{
             width: '100vw', 
-            height: '100vh', 
+            minHeight: '100vh', 
             backgroundColor: 'background.default'
           }}>
             <TopBar/> 
+            <Box sx={{
+              margin: '25px 25px 55px 25px',
+            }}>
+              <Routes>
+                <Route path="/" element={<Homepage/>}  />
+              </Routes>
+            </Box>
             <FooterBar sx={{color: 'white'}}/>
           </Box>
         </ThemeProvider>
