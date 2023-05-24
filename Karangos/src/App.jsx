@@ -9,6 +9,7 @@ import {ThemeProvider} from '@mui/material/styles';
 import { Box, CssBaseline } from '@mui/material';
 import FooterBar from './components/ui/FooterBar';
 import Homepage from './pages/Homepage';
+import CustomerList from './pages/CustomersList';
 
 function App() {
 
@@ -28,6 +29,9 @@ function App() {
             }}>
               <Routes>
                 <Route path="/" element={<Homepage/>}  />
+              </Routes>
+              <Routes>
+                <Route path="/customers" element={<CustomerList/>}  />
               </Routes>
             </Box>
             <FooterBar sx={{color: 'white'}}/>
