@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { IconButton, Paper, Typography } from '@mui/material'
+import { Box, Button, IconButton, Paper, Typography } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid';
 import { format } from 'date-fns';
 import EditIcon from '@mui/icons-material/Edit';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { Link } from 'react-router-dom';
 
 export default function CustomerList(){
     const [state, setState] = useState({
@@ -69,38 +71,79 @@ export default function CustomerList(){
             headerAling: 'center',
             aling: 'center',
             width: 150,
-          }, {
+        }, {
             field: 'email',
             headerName: 'Email',
             width: 200,
-          },{
+        },{
             field: 'edit',
             headerName: 'Editar',
             headerAlign: 'center',
             align: 'center',
             width: 90,
             renderCell: params => 
-            <IconButton aria-label='Editar'>
-                <EditIcon/>
-            </IconButton>
-          },{
+            <Link to={'./'+ params.id}>
+                <IconButton aria-label='Editar'>
+                    <EditIcon/>
+                </IconButton>
+            </Link>
+        },{
             field: 'delete',
             headerName: 'Excluir',
             headerAlign: 'center',
             align: 'center',
             width: 90,
             renderCell: params => 
-            <IconButton aria-label='Deletar'>
+            <IconButton 
+                aria-label='Deletar'
+                onClick={()=> handleDeleteButtonClick(params.id)}
+            >
                 <DeleteForeverIcon color='error'/>
             </IconButton>
-          },
-      ];
+            
+        },
+    ];
+
+    async function handleDeleteButtonClick(id){
+        if(confirm('Deseja realmente excluir este item?')){
+            try {
+                const result = await fetch(`https://api.faustocintra.com.br/customers/${id}`, {
+                    method: 'DELETE'
+                })
+                if(result.ok) loadData()
+                alert('Exclusão efetuada com sucesso')
+            }
+            catch(error){
+                console.error(error)
+            }
+        }
+    }
+
+
 
     return (
         <>
             <Typography variant='h1'>
                 Listagem de clientes
             </Typography>
+
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'right',
+                mb: '25px'
+            }}>
+                <Link to="new">
+                    <Button
+                    color='secondary'     
+                    variant="contained" 
+                    size='large'
+                    startIcon={<AddBoxIcon />}   
+                    >
+                        Cadastrar novo cliente
+                    </Button>
+                </Link>
+               
+            </Box>
 
             <Paper elevation={4} sx={{ height: 400, width: '100%', mt: '50px' }}>
                 <DataGrid
