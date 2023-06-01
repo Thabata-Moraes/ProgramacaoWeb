@@ -12,6 +12,8 @@ import FooterBar from './components/ui/FooterBar';
 import Homepage from './pages/Homepage';
 import CustomersList from './pages/CustomersList';
 import CustomersForm from './pages/CustomersForm';
+import CarsList from './pages/CarsList';
+import CarsForm from './pages/CarsForm';
 
 function App() {
 
@@ -34,6 +36,10 @@ function App() {
                 <Route path="/customers" element={<CustomersList/>}  />
                 <Route path="/customers/new" element={<CustomersForm/>}  />
                 <Route path="/customers/:id" element={<CustomersForm/>}  />
+                {/* Aqui as rotas para a listagem de carros, para adicionar um carro e editar carro existente, são criadas: */}
+                <Route path="/cars" element={<CarsList/>}  />
+                <Route path="/cars/new" element={<CarsForm/>}  />
+                <Route path="/cars/:id" element={<CarsForm/>}  />
               </Routes>
             </Box>
             <FooterBar sx={{color: 'white'}}/>
